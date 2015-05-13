@@ -28,7 +28,7 @@ function createPage() {
     }).appendTo(page);
 
     var compositeName1 = tabris.create("Composite", {
-      layoutData: {top: 50, left: "20%", right: "20%"},
+      layoutData: {top: 50, left: "10%", right: "10%"},
     }).appendTo(scrollView);
 
     var textName1 = tabris.create("TextView", {
@@ -42,7 +42,7 @@ function createPage() {
     }).appendTo(compositeName1);
 
     var compositeName2 = tabris.create("Composite", {
-      layoutData: {top: [compositeName1, 30], left: "20%", right: "20%"},
+      layoutData: {top: [compositeName1, 30], left: "10%", right: "10%"},
       text: ""
     }).appendTo(scrollView);
 
@@ -57,7 +57,7 @@ function createPage() {
     }).appendTo(compositeName2);
 
     tabris.create("Button", {
-      layoutData: {top: [compositeName2, 30], left: "20%", right: "20%"},
+      layoutData: {top: [compositeName2, 30], left: "10%", right: "10%"},
       text: "Cambiar contraseña"
     }).on("select", function() {
         changePassword.createPage().open();

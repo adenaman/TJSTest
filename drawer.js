@@ -76,10 +76,12 @@ exports.recreateDrawer = function(actualPage){
 
 exports.openDrawer = function(){
     if (drawer) drawer.open();
+    console.log("drawer open : ", drawer.isDisposed(), " - ", drawer.enabled, " - ", drawer.visible);
 }
 
 exports.closeDrawer = function(){
     if (drawer) drawer.close();
+    console.log("drawer close : ", drawer.isDisposed(), " - ", drawer.enabled, " - ", drawer.visible);
 }
 
 //exports.openCloseDrawer = function(){

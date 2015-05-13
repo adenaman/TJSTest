@@ -14,7 +14,7 @@ var page = tabris.create("Page", {
         actionDrawer = tabris.create("Action", {
             title: "Menu",
             placementPriority: "high",
-            image: {src: "images/salad.jpg", scale: 3}
+            image: {src: "images/salad.jpg", width: 25, height: 20}
         }).on("select", function() {
           if (!this.closed)
               drawer.openDrawer();

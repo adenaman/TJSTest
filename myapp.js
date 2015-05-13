@@ -26,7 +26,7 @@ var textUser = tabris.create("TextView", {
 }).appendTo(scrollView);
 
 var inputUser = tabris.create("TextInput", {
-  layoutData: {top: [textUser, 20], left: "20%", right: "20%"},
+  layoutData: {top: [textUser, 20], left: "10%", right: "10%"},
   message: "Usuario"
 }).appendTo(scrollView);
 
@@ -36,13 +36,13 @@ var textPassword = tabris.create("TextView", {
 }).appendTo(scrollView);
 
 var inputPassword = tabris.create("TextInput", {
-  layoutData: {top: [textPassword, 20], left: "20%", right: "20%"},
+  layoutData: {top: [textPassword, 20], left: "10%", right: "10%"},
   message: "Contraseña",
   type: "password"
 }).appendTo(scrollView);
 
 var composite = tabris.create("Composite", {
-  layoutData: {top: [inputPassword, 20], left: "20%", right: "20%"},
+  layoutData: {top: [inputPassword, 20], left: "10%", right: "10%"},
 }).appendTo(scrollView);
 
 tabris.create("Button", {
@@ -58,6 +58,8 @@ tabris.create("Button", {
 }).on("select", function() {
   this.set("text", "Pressed ");
 }).appendTo(composite);
+
+console.log(page.children("TextInput"));
 
 page.open();
 
