@@ -47,8 +47,8 @@ exports.createDrawer = function(actualPage){
                             require('./contact.js'), actualPage);
     var fileTest = createItem("File Test", "images/salad.jpg",    
                             require('./fileTest.js'), actualPage);
-//    var calendarTest = createItem("Calendar Test", "images/salad.jpg",    
-//                            require('./calendarTest.js'), actualPage);
+    var calendarTest = createItem("Calendar Test", "images/salad.jpg",    
+                            require('./calendarTest.js'), actualPage);
 
     articles.set("layoutData", {top: 20, left: 0, right: 0});
     account.set("layoutData", {top: [articles, 20], left: 0, right: 0});
@@ -56,7 +56,7 @@ exports.createDrawer = function(actualPage){
     information.set("layoutData", {top: [changePassword, 20], left: 0, right: 0});
     contact.set("layoutData", {top: [information, 20], left: 0, right: 0});
     fileTest.set("layoutData", {top: [contact, 20], left: 0, right: 0});
-//    calendarTest.set("layoutData", {top: [fileTest, 20], left: 0, right: 0});
+    calendarTest.set("layoutData", {top: [fileTest, 20], left: 0, right: 0});
 
     
     var scrollView = tabris.create("ScrollView", {
@@ -70,7 +70,7 @@ exports.createDrawer = function(actualPage){
     information.appendTo(scrollView);
     contact.appendTo(scrollView);
     fileTest.appendTo(scrollView);
-//    calendarTest.appendTo(scrollView);
+    calendarTest.appendTo(scrollView);
     
 //    opened = false;
 }
