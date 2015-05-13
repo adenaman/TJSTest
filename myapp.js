@@ -59,7 +59,5 @@ tabris.create("Button", {
   this.set("text", "Pressed ");
 }).appendTo(composite);
 
-console.log(page.children("TextInput"));
-
 page.open();
 

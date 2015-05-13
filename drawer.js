@@ -47,6 +47,8 @@ exports.createDrawer = function(actualPage){
                             require('./contact.js'), actualPage);
     var fileTest = createItem("File Test", "images/salad.jpg",    
                             require('./fileTest.js'), actualPage);
+    var calendarTest = createItem("Calendar Test", "images/salad.jpg",    
+                            require('./calendarTest.js'), actualPage);
 
     articles.set("layoutData", {top: 20, left: 0, right: 0});
     account.set("layoutData", {top: [articles, 20], left: 0, right: 0});
@@ -54,13 +56,21 @@ exports.createDrawer = function(actualPage){
     information.set("layoutData", {top: [changePassword, 20], left: 0, right: 0});
     contact.set("layoutData", {top: [information, 20], left: 0, right: 0});
     fileTest.set("layoutData", {top: [contact, 20], left: 0, right: 0});
+    calendarTest.set("layoutData", {top: [fileTest, 20], left: 0, right: 0});
 
-    articles.appendTo(drawer);
-    account.appendTo(drawer);
-    changePassword.appendTo(drawer);
-    information.appendTo(drawer);
-    contact.appendTo(drawer);
-    fileTest.appendTo(drawer);
+    
+    var scrollView = tabris.create("ScrollView", {
+      direction: "vertical",
+      layoutData: {left: 0, top: 0}
+    }).appendTo(drawer);
+    
+    articles.appendTo(scrollView);
+    account.appendTo(scrollView);
+    changePassword.appendTo(scrollView);
+    information.appendTo(scrollView);
+    contact.appendTo(scrollView);
+    fileTest.appendTo(scrollView);
+    calendarTest.appendTo(scrollView);
     
 //    opened = false;
 }
@@ -76,12 +86,10 @@ exports.recreateDrawer = function(actualPage){
 
 exports.openDrawer = function(){
     if (drawer) drawer.open();
-    console.log("drawer open : ", drawer.isDisposed(), " - ", drawer.enabled, " - ", drawer.visible);
 }
 
 exports.closeDrawer = function(){
     if (drawer) drawer.close();
-    console.log("drawer close : ", drawer.isDisposed(), " - ", drawer.enabled, " - ", drawer.visible);
 }
 
 //exports.openCloseDrawer = function(){
