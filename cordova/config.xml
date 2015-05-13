@@ -4,7 +4,7 @@
   <description>
     A sample Tabris.js application.
   </description>
-  <author>
-    Tabris.js Team
+  <author email="a@aa.com" href="https://a.com">
+    Team
   </author>
 </widget>
