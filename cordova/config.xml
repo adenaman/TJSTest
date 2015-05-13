@@ -7,5 +7,5 @@
   <author email="a@aa.com" href="https://a.com">
     Team
   </author>
-    <gap:plugin name="nl.x-services.plugins.calendar" />
+<gap:plugin name="org.apache.cordova.dialogs" />
 </widget>
