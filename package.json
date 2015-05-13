@@ -1,0 +1,11 @@
+{
+  "title": "Parallax scrolling",
+  "category": "Animation",
+  "description": "Provides a sample implementation for a parallax scrolling effect",
+  "main": "myapp.js",
+  "dependencies": {
+    "tabris": "1.0.0",
+    "promise": "^6.1.0",
+    "whatwg-fetch": "^0.7.0"
+  }
+}
