@@ -29,9 +29,7 @@ function createPage() {
     var onError = function (e) {
         console.log('[ERROR] Problem setting up root filesystem for test running! Error to follow.');
         console.log(JSON.stringify(e));
-    };
-
-    console.log(window.resolveLocalFileSystemURL());
+    };  
 
     function onDeviceReady() {
         var db = window.openDatabase("Database", "1.0", "Cordova Demo", 200000);
