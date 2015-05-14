@@ -11,7 +11,5 @@
     Team
   </author>
   <gap:plugin name="nl.x-services.plugins.calendar" />
-  <feature name="Storage">
-      <param name="android-package" value="org.apache.cordova.Storage" />
-  </feature>
+  <gap:plugin git="https://github.com/leecrossley/cordova-plugin-directions.git" />
 </widget>
