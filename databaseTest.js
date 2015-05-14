@@ -1,7 +1,7 @@
 var drawer = require('./drawer.js');
 var changePassword = require('./changePassword');
 
-var TITLE = "File Test";
+var TITLE = "DataBase Test";
 
 function createPage() {
     var page = tabris.create("Page", {
