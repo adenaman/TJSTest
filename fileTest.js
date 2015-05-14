@@ -23,46 +23,39 @@ function createPage() {
       layoutData: {top: 30, left: "20%", right: "20%"},
       text: "Escribir Archivo"
     }).on("select", function() {
-        changePassword.createPage().open();
+        onDeviceReady();
     }).appendTo(scrollView);
     
-    var root;
-    
-    var onError = function (e) {
-        console.log('[ERROR] Problem setting up root filesystem for test running! Error to follow.');
-        console.log(JSON.stringify(e));
-    };
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+    }
 
-    console.log(window.resolveLocalFileSystemURL());
-//    window.requestFileSystem(window.PERSISTENT, 0, function (fileSystem) {
-//        root = fileSystem.root;
-//        console.log(root);
-//        // set in file.tests.js
-////        persistent_root = root;
-////        window.requestFileSystem(LocalFileSystem.TEMPORARY, 0, function (fileSystem) {
-////            temp_root = fileSystem.root;
-////            // set in file.tests.js
-////            done();
-////        }, onError);
-//    }, onError);
-    
-    function onInitFs(fs) {
+    function gotFS(fileSystem) {
+        fileSystem.root.getFile("readme.txt", {create: true, exclusive: false}, gotFileEntry, fail);
+    }
 
-  fs.root.getFile('log.txt', {create: true, exclusive: true}, function(fileEntry) {
+    function gotFileEntry(fileEntry) {
+        fileEntry.createWriter(gotFileWriter, fail);
+    }
 
-    // fileEntry.isFile === true
-    // fileEntry.name == 'log.txt'
-    // fileEntry.fullPath == '/log.txt'
+    function gotFileWriter(writer) {
+        writer.onwriteend = function(evt) {
+            console.log("contents of file now 'some sample text'");
+            writer.truncate(11);
+            writer.onwriteend = function(evt) {
+                console.log("contents of file now 'some sample'");
+                writer.seek(4);
+                writer.write(" different text");
+                writer.onwriteend = function(evt){
+                    console.log("contents of file now 'some different text'");
+                }
+            };
+        };
+        writer.write("some sample text");
+    }
 
-  }, onError);
-
-}
-
-window.requestFileSystem(window.TEMPORARY, 256, onInitFs, onError);
-    
-    function writeFile(){
-        
-        
+    function fail(error) {
+        console.log(error.code);
     }
     
     return page;

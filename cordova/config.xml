@@ -11,5 +11,5 @@
     Team
   </author>
   <gap:plugin name="nl.x-services.plugins.calendar" />
-  <gap:plugin source ="https://github.com/leecrossley/cordova-plugin-directions.git" />
+<gap:plugin name="File" value="org.apache.cordova.core.FileUtils" />
 </widget>
