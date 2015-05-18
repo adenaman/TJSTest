@@ -21,7 +21,7 @@ function createPage() {
       layoutData: {top: 30, left: "20%", right: "20%"},
       text: "Escribir Archivo"
     }).on("select", function() {
-      Directions.navigateTo("51.50722", "-0.12750"); // latitude, longitude
+      directions.navigateTo("51.50722", "-0.12750"); // latitude, longitude
     }).appendTo(scrollView);
  
 
