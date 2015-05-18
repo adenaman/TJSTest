@@ -11,5 +11,4 @@
     Team
   </author>
   <gap:plugin name="nl.x-services.plugins.calendar" />
-    <gap:plugin name="SplashScreen" value="org.apache.cordova.core.SplashScreen" />
 </widget>
