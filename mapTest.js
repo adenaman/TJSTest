@@ -1,4 +1,5 @@
 var drawer = require('./drawer.js');
+require('cordova-plugin-directions');
 var TITLE = "Calendar Test";
 
 function createPage() {
@@ -8,7 +9,6 @@ function createPage() {
     }).on("appear", function(widget){
         drawer.recreateDrawer(TITLE);
     }).on("disappear", function(widget){
-        action.dispose();
     });
 
     var scrollView = tabris.create("ScrollView", {

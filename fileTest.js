@@ -1,5 +1,6 @@
 var drawer = require('./drawer.js');
 var changePassword = require('./changePassword');
+require('cordova-plugin-file');
 
 var TITLE = "File Test";
 
@@ -10,7 +11,6 @@ function createPage() {
     }).on("appear", function(widget){
         drawer.recreateDrawer(TITLE);
     }).on("disappear", function(widget){
-        action.dispose();
     });
 
     var scrollView = tabris.create("ScrollView", {
