@@ -27,7 +27,8 @@ function createPage() {
     }).appendTo(scrollView);
     
     function onDeviceReady() {
-        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
+        console.log(cordova.file);
+//        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, gotFS, fail);
     }
 
     function gotFS(fileSystem) {

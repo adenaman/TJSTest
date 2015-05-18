@@ -7,6 +7,7 @@
     "tabris": "latest",
     "promise": "^6.1.0",
     "whatwg-fetch": "^0.7.0",
-    "cordova-plugin-directions": "0.3.1"
+    "cordova-plugin-directions": "git://github.com/leecrossley/cordova-plugin-directions.git",
+    "cordova-plugin-file": "git://github.com/apache/cordova-plugin-file.git"
   }
 }
