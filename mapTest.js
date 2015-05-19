@@ -1,5 +1,5 @@
 var drawer = require('./drawer.js');
-var dir = require('cordova-plugin-directions');
+var dir = cordova.require('cordova-plugin-directions');
 var TITLE = "Calendar Test";
 
 function createPage() {
