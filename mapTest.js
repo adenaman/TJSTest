@@ -1,5 +1,4 @@
 var drawer = require('./drawer.js');
-var dir = cordova.require('cordova-plugin-directions');
 var TITLE = "Calendar Test";
 
 function createPage() {
@@ -21,6 +20,7 @@ function createPage() {
       layoutData: {top: 30, left: "20%", right: "20%"},
       text: "Escribir Archivo"
     }).on("select", function() {
+        var dir = cordova.require('cordova-plugin-directions');
         console.log(dir);
       dir.navigateTo("51.50722", "-0.12750"); // latitude, longitude
     }).appendTo(scrollView);
