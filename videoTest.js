@@ -1,5 +1,5 @@
 var drawer = require('./drawer.js');
-var TITLE = "Calendar Test";
+var TITLE = "Video Test";
 
 function createPage() {
     var page = tabris.create("Page", {
