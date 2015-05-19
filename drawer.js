@@ -53,6 +53,8 @@ exports.createDrawer = function(actualPage){
                             require('./mapTest.js'), actualPage);
     var databaseTest = createItem("DataBase Test", "images/salad.jpg",    
                             require('./databaseTest.js'), actualPage);
+    var videoTest = createItem("Video Test", "images/salad.jpg",    
+                            require('./videoTest.js'), actualPage);
 
     articles.set("layoutData", {top: 20, left: 0, right: 0});
     account.set("layoutData", {top: [articles, 20], left: 0, right: 0});
@@ -63,6 +65,7 @@ exports.createDrawer = function(actualPage){
     calendarTest.set("layoutData", {top: [fileTest, 20], left: 0, right: 0});
     mapTest.set("layoutData", {top: [calendarTest, 20], left: 0, right: 0});
     databaseTest.set("layoutData", {top: [mapTest, 20], left: 0, right: 0});
+    videoTest.set("layoutData", {top: [databaseTest, 20], left: 0, right: 0});
 
     
     var scrollView = tabris.create("ScrollView", {
@@ -79,6 +82,7 @@ exports.createDrawer = function(actualPage){
     calendarTest.appendTo(scrollView);
     mapTest.appendTo(scrollView);
     databaseTest.appendTo(scrollView);
+    videoTest.appendTo(scrollView);
     
 //    opened = false;
 }

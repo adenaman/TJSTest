@@ -16,18 +16,11 @@ function createPage() {
     //  background: "#234"
     }).appendTo(page);
 
-    tabris.create("Button", {
-      layoutData: {top: 30, left: "20%", right: "20%"},
-      text: "Escribir Archivo"
-    }).on("select", function() {
-        var dir = require('cordova-plugin-directions');
-        console.log(dir);
-      dir.navigateTo("51.50722", "-0.12750"); // latitude, longitude
+    tabris.create("Video", {
+        layoutData: {left: 0, right: 0, top: 0, bottom: 0},
+        url: "video/sample_mpeg4.mp4"
     }).appendTo(scrollView);
  
-
-    console.log(window.plugins.calendar);
-    
     return page;
 }
 
